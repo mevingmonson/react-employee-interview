@@ -1,0 +1,10 @@
+.EmployeeList {
+    background-color: #007bff;
+    transition: 0.2s;
+    border-radius: 5px;
+}
+
+.EmployeeList:hover {
+    background-color: #006bdd;
+    cursor: pointer;
+}
