@@ -1,3 +1,13 @@
+a {
+    text-decoration: none;
+}
+
+.MyActive div, .MyActive div:hover {
+    background: rgb(22, 212, 4);
+    transform: scale(1.02);
+    transition: 0.5s;
+}
+
 .EmployeeList {
     background-color: #007bff;
     transition: 0.2s;

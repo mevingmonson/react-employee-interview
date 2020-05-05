@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { BrowserRouter, Route } from 'react-router-dom'
 
 import axios from 'axios'
 
@@ -45,10 +46,16 @@ export default class EmployeeBuilder extends Component {
             empDetails = <p className="mt-3 ml-3">App Id not Found. Please select any employee</p>
         }
         return (
-            <div className="row">
-                <EmployeeLists setEmployeeDetails={this.getEmpDetails} employeesData={this.state.candidatesData} />
-                {empDetails}
-            </div>
+            <BrowserRouter>
+                <div className="row">
+                    <Route path="/" component={() => <EmployeeLists
+                        setEmployeeDetails={this.getEmpDetails}
+                        employeesData={this.state.candidatesData} />}
+                    />
+                    <Route path="/:name" component={() => empDetails} />
+                    {/* {empDetails} */}
+                </div>
+            </BrowserRouter>
         )
     }
 }
